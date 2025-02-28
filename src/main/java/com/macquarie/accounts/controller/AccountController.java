@@ -20,8 +20,12 @@ public class AccountController {
 
     Logger logger = LoggerFactory.getLogger(AccountController.class);
 
-    @Autowired
     private AccountService accountService;
+
+    @Autowired
+    public AccountController(AccountService accountService) {
+        this.accountService = accountService;
+    }
 
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<Account>> getAccountsByUserId(@PathVariable Long userId) {

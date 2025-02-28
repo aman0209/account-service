@@ -19,3 +19,11 @@ spring:
     init:
       mode: always
       schema-locations: classpath:schema.sql
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health,info
+

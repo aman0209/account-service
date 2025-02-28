@@ -10,8 +10,12 @@ import java.util.List;
 @Service
 public class TransactionService {
 
-    @Autowired
     private TransactionRepository transactionRepository;
+
+    @Autowired
+    public TransactionService(TransactionRepository transactionRepository) {
+        this.transactionRepository = transactionRepository;
+    }
 
     public List<Transaction> getTransactionsByAccountId(Long accountId) {
         return transactionRepository.findByAccountId(accountId);

@@ -10,8 +10,12 @@ import java.util.List;
 @Service
 public class AccountService {
 
-    @Autowired
     private AccountRepository accountRepository;
+
+    @Autowired
+    public AccountService(AccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
+    }
 
     public List<Account> getAccountsByUserId(Long userId) {
         return accountRepository.findByUserId(userId);

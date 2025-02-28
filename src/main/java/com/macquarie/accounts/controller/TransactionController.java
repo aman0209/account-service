@@ -22,8 +22,12 @@ public class TransactionController {
 
     Logger logger = LoggerFactory.getLogger(TransactionController.class);
 
-    @Autowired
     private TransactionService transactionService;
+
+    @Autowired
+    public TransactionController(TransactionService transactionService) {
+        this.transactionService = transactionService;
+    }
 
     @GetMapping("/account/{accountId}")
     public ResponseEntity<List<Transaction>> getTransactionsByAccountId(@PathVariable Long accountId) {
