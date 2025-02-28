@@ -1,10 +1,22 @@
 **Account Service Application**
 
 **Overview**
+
 This application is a backend service for handling account and transaction data for users. It provides two key functionalities:
 
 1. View all accounts of a user: Retrieves a list of accounts associated with a specific user.
 2. View all transactions of a particular account: Retrieves all transactions associated with a specific account.
+
+**Clone the repository**
+
+git clone https://github.com/your-repository/account-service.git
+cd account-service
+
+**Install dependecies**
+
+mvn clean install
+
+**Configure and initialize database**
 
 The schema.sql file is responsible for creating the necessary tables and populating them with dummy data for testing purposes.
 
